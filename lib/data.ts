@@ -36,6 +36,10 @@ import {
   Compass,
   FileSearch,
   Boxes,
+  UserSearch,
+  Briefcase,
+  Banknote,
+  Lock,
 } from "lucide-react";
 
 export const siteConfig = {
@@ -43,7 +47,7 @@ export const siteConfig = {
   shortName: "VERTEX",
   tagline: "Security Training • Risk Consultancy • Security Technology",
   slogan: "Protecting People • Assets • Reputation",
-  brandPromise: "We don't simply provide security—we build security capability.",
+  brandPromise: "We don't provide security—we enhance security capabilities.",
   description:
     "Vertex Security Solutions is a Bangladesh-based Security Training, Risk Consultancy, and Security Technology firm dedicated to helping organizations protect their people, assets, operations, information, and reputation.",
   url: "https://vertexsecuritysolutions.com",
@@ -54,8 +58,8 @@ export const contactInfo = {
   credentials: "psc, MDS, MBA, SRMP-C (Retd)",
   title: "Founder & Principal Security Consultant",
   email: "khalilak@gmail.com",
-  phone: "+880 1711-277476",
-  phoneHref: "+8801711277476",
+  phone: "+880 1977-277476",
+  phoneHref: "+8801977277476",
   location: "Dhaka, Bangladesh",
 };
 
@@ -84,7 +88,7 @@ export const mission =
 export const companyStory = [
   "Vertex Security Solutions is a professional Security Training, Risk Consultancy, and Security Technology firm dedicated to helping organizations protect their people, assets, operations, information, and reputation through integrated, risk-based security solutions.",
   "We partner with clients to develop capable security personnel, strengthen security systems, improve regulatory compliance, enhance emergency preparedness, and build resilient organizations capable of operating safely in an increasingly complex security environment.",
-  "Unlike conventional security companies, Vertex does not simply provide security services — we develop security capability through professional training, strategic consultancy, and practical solutions tailored to each client's operational needs.",
+  "Unlike conventional security companies, Vertex does not provide security services — we enhance security capabilities through professional training, strategic consultancy, and practical solutions tailored to each client's operational and organizational needs.",
   "Our approach combines international best practices with extensive operational experience gained from the Bangladesh Army, United Nations Peacekeeping Missions, the U.S. Embassy in Dhaka, and senior leadership roles in one of the world's leading security organizations.",
 ];
 
@@ -166,7 +170,7 @@ export type ServiceCategory = {
 export const serviceCategories: ServiceCategory[] = [
   {
     slug: "security-training",
-    title: "Security Training",
+    title: "Professional Security Training",
     shortTitle: "Training",
     icon: GraduationCap,
     summary:
@@ -219,7 +223,7 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     slug: "security-technology",
-    title: "Electronic Security Consultancy",
+    title: "Security Technology",
     shortTitle: "Security Technology",
     icon: Cctv,
     summary:
@@ -237,7 +241,7 @@ export const serviceCategories: ServiceCategory[] = [
   },
   {
     slug: "executive-protection",
-    title: "Executive Protection Services",
+    title: "Executive Protection",
     shortTitle: "Executive Protection",
     icon: UserCheck,
     summary:
@@ -253,13 +257,32 @@ export const serviceCategories: ServiceCategory[] = [
       "Event Security",
     ],
   },
+  {
+    slug: "background-screening",
+    title: "Background Screening",
+    shortTitle: "Background Screening",
+    icon: UserSearch,
+    summary:
+      "Due-diligence screening services that help organizations verify candidates, vendors, and partners before extending trust.",
+    items: [
+      "Pre-Employment Background Checks",
+      "Reference Verification",
+      "Employment History Verification",
+      "Criminal Record Verification",
+      "Education & Credential Verification",
+      "Address & Identity Verification",
+      "Vendor & Contractor Vetting",
+      "Ongoing Employee Screening",
+    ],
+  },
 ];
 
 export const serviceInterestOptions: string[] = [
-  "Security Training",
+  "Professional Security Training",
   "Security Risk Consultancy",
-  "Electronic Security Consultancy",
-  "Executive Protection Services",
+  "Security Technology",
+  "Executive Protection",
+  "Background Screening",
   "RMG Security Solutions",
   "General Inquiry",
 ];
@@ -394,13 +417,20 @@ export const careerTimeline: TimelineEntry[] = [
   },
   {
     order: "06",
-    role: "SVP & Head of Cash Services / SVP & Head of Internal Security",
+    role: "SVP & Head of Cash Services",
     organization: "G4S Bangladesh",
     description:
-      "Held senior leadership positions overseeing cash services and internal security across the organization.",
+      "Held senior leadership oversight of cash services operations across the organization.",
   },
   {
     order: "07",
+    role: "SVP & Head of Internal Security",
+    organization: "G4S Bangladesh",
+    description:
+      "Held senior leadership oversight of internal security across the organization.",
+  },
+  {
+    order: "08",
     role: "Founder & Principal Security Consultant",
     organization: "Vertex Security Solutions",
     description:
@@ -411,7 +441,7 @@ export const careerTimeline: TimelineEntry[] = [
 export const whyVertexPoints: { title: string; description: string; icon: LucideIcon }[] = [
   {
     title: "Leadership",
-    description: "Our leadership brings more than four decades of experience in military, diplomatic, and corporate security management.",
+    description: "Our leadership brings more than four decades of security knowledge in military, diplomatic, corporate and different industries security management.",
     icon: Target,
   },
   {
@@ -440,7 +470,7 @@ export const homepageServiceCards: {
 }[] = [
   {
     slug: "security-training",
-    title: "Security Training",
+    title: "Professional Security Training",
     description: "Competency-based programmes that develop professional, disciplined security personnel.",
     icon: GraduationCap,
   },
@@ -461,6 +491,459 @@ export const homepageServiceCards: {
     title: "Executive Protection",
     description: "Close protection, VIP security, and travel security planning and training.",
     icon: UserCheck,
+  },
+];
+
+export type SolutionLink = {
+  slug: string;
+  name: string;
+  icon: LucideIcon;
+  href: string;
+  blurb: string;
+};
+
+export const ourSolutions: SolutionLink[] = [
+  {
+    slug: "rmg",
+    name: "Ready-Made Garments (RMG)",
+    icon: Shirt,
+    href: "/rmg-solutions",
+    blurb: "Compliance-driven security for factories and exporters.",
+  },
+  {
+    slug: "banking",
+    name: "Banks & Financial Institutions",
+    icon: Landmark,
+    href: "/solutions/banking",
+    blurb: "Cash, branch, and fraud-aware security programmes.",
+  },
+  {
+    slug: "multinational",
+    name: "Multinational Companies",
+    icon: Building2,
+    href: "/solutions/multinational",
+    blurb: "Corporate-grade security aligned to global standards.",
+  },
+  {
+    slug: "pharmaceuticals",
+    name: "Pharmaceuticals",
+    icon: Pill,
+    href: "/solutions/pharmaceuticals",
+    blurb: "Facility, product, and regulatory compliance security.",
+  },
+  {
+    slug: "healthcare",
+    name: "Hospitals & Healthcare",
+    icon: HeartPulse,
+    href: "/solutions/healthcare",
+    blurb: "Patient, staff, and facility safety programmes.",
+  },
+  {
+    slug: "education",
+    name: "Educational Institutions",
+    icon: School,
+    href: "/solutions/education",
+    blurb: "Safer campuses through training and access control.",
+  },
+  {
+    slug: "embassies",
+    name: "Embassies & Diplomatic Missions",
+    icon: Globe,
+    href: "/solutions/embassies",
+    blurb: "Diplomatic-grade protection and screening.",
+  },
+  {
+    slug: "ngo",
+    name: "NGOs & International Organizations",
+    icon: Users,
+    href: "/solutions/ngo",
+    blurb: "Duty-of-care security for staff and field operations.",
+  },
+  {
+    slug: "energy",
+    name: "Power & Energy",
+    icon: Zap,
+    href: "/solutions/energy",
+    blurb: "Critical infrastructure and site protection.",
+  },
+  {
+    slug: "corporate",
+    name: "Corporate Offices",
+    icon: Briefcase,
+    href: "/solutions/corporate",
+    blurb: "Right-sized security for modern workplaces.",
+  },
+];
+
+export type IndustrySolution = {
+  slug: string;
+  name: string;
+  icon: LucideIcon;
+  tagline: string;
+  description: string;
+  services: RmgService[];
+};
+
+export const industrySolutions: IndustrySolution[] = [
+  {
+    slug: "banking",
+    name: "Banks & Financial Institutions",
+    icon: Landmark,
+    tagline: "Banking & Financial Security",
+    description:
+      "Vertex helps banks and financial institutions protect cash, branches, and customers with security programmes built for the realities of the financial sector.",
+    services: [
+      {
+        title: "Cash-in-Transit Security",
+        description: "Secure protocols and escort procedures for the safe movement of cash between branches and vaults.",
+        icon: Banknote,
+      },
+      {
+        title: "Branch Security Assessment",
+        description: "Structured evaluation of physical security controls across branch networks and ATMs.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Vault & Cash Security Systems",
+        description: "Advisory on vault construction standards, safes, and cash-handling security systems.",
+        icon: Lock,
+      },
+      {
+        title: "Robbery Prevention & Response Training",
+        description: "Training staff to recognize threats, respond safely, and minimize risk during robbery incidents.",
+        icon: ShieldAlert,
+      },
+      {
+        title: "Fraud & Insider Threat Awareness",
+        description: "Programmes to help staff identify and report fraud, collusion, and internal security risks.",
+        icon: ScanEye,
+      },
+      {
+        title: "Access Control & Surveillance",
+        description: "Integrated access control and CCTV systems for branches, vaults, and back-office operations.",
+        icon: Cctv,
+      },
+    ],
+  },
+  {
+    slug: "multinational",
+    name: "Multinational Companies",
+    icon: Building2,
+    tagline: "Corporate & Multinational Security",
+    description:
+      "Vertex supports multinational companies operating in Bangladesh with security programmes that meet global corporate standards while adapting to local operational realities.",
+    services: [
+      {
+        title: "Corporate Security Policy Development",
+        description: "Developing security policies and procedures aligned with global corporate governance standards.",
+        icon: FileText,
+      },
+      {
+        title: "Executive Protection",
+        description: "Close protection and travel security for executives and visiting leadership.",
+        icon: UserCheck,
+      },
+      {
+        title: "Travel Risk Management",
+        description: "Risk assessments and safety planning for domestic and international employee travel.",
+        icon: Compass,
+      },
+      {
+        title: "Facility Security Audits",
+        description: "Independent audits of office and facility security controls against corporate benchmarks.",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Crisis Management Planning",
+        description: "Crisis response frameworks covering security incidents, emergencies, and business disruption.",
+        icon: Siren,
+      },
+      {
+        title: "Employee Security Awareness Training",
+        description: "Training programmes that build a security-conscious culture across the workforce.",
+        icon: GraduationCap,
+      },
+    ],
+  },
+  {
+    slug: "pharmaceuticals",
+    name: "Pharmaceuticals",
+    icon: Pill,
+    tagline: "Pharmaceutical Facility Security",
+    description:
+      "Pharmaceutical manufacturers and distributors face strict regulatory and product-integrity requirements. Vertex provides security solutions that protect facilities, products, and compliance standing.",
+    services: [
+      {
+        title: "Facility Security Assessment",
+        description: "Evaluation of manufacturing, storage, and distribution facility security controls.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Anti-Counterfeiting & Product Security",
+        description: "Advisory on controls that protect product integrity from manufacturing through distribution.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Restricted Area Access Control",
+        description: "Access control systems for cleanrooms, labs, and controlled-substance storage areas.",
+        icon: KeyRound,
+      },
+      {
+        title: "Warehouse & Cold Chain Security",
+        description: "Security controls for storage and distribution of temperature-sensitive pharmaceutical products.",
+        icon: Warehouse,
+      },
+      {
+        title: "Regulatory Compliance Support",
+        description: "Security advisory aligned to DGDA and international pharmaceutical compliance requirements.",
+        icon: FileSearch,
+      },
+      {
+        title: "Fire Safety Management",
+        description: "Fire prevention systems and readiness training aligned to BNBC requirements.",
+        icon: FireExtinguisher,
+      },
+    ],
+  },
+  {
+    slug: "healthcare",
+    name: "Hospitals & Healthcare",
+    icon: HeartPulse,
+    tagline: "Healthcare Facility Security",
+    description:
+      "Vertex helps hospitals and healthcare facilities protect patients, staff, and visitors with security programmes designed for sensitive, high-traffic care environments.",
+    services: [
+      {
+        title: "Patient & Visitor Safety Programmes",
+        description: "Security protocols that protect patients, families, and visitors throughout the facility.",
+        icon: HeartPulse,
+      },
+      {
+        title: "Restricted Area Access Control",
+        description: "Access control for maternity wards, ICUs, pharmacies, and other sensitive areas.",
+        icon: KeyRound,
+      },
+      {
+        title: "Emergency Response & Evacuation Planning",
+        description: "Emergency preparedness and evacuation planning tailored to healthcare environments.",
+        icon: Siren,
+      },
+      {
+        title: "Workplace Violence Prevention",
+        description: "Training and protocols to prevent and de-escalate incidents involving patients or visitors.",
+        icon: ShieldAlert,
+      },
+      {
+        title: "Security Personnel Training for Healthcare",
+        description: "Specialized training for security staff working in clinical and patient-facing settings.",
+        icon: GraduationCap,
+      },
+      {
+        title: "CCTV & Surveillance Systems",
+        description: "Surveillance system design for wards, entrances, pharmacies, and parking areas.",
+        icon: Cctv,
+      },
+    ],
+  },
+  {
+    slug: "education",
+    name: "Educational Institutions",
+    icon: School,
+    tagline: "Campus & School Security",
+    description:
+      "From schools to universities, Vertex helps educational institutions create safer campuses through assessment, training, and access control solutions.",
+    services: [
+      {
+        title: "Campus Security Assessment",
+        description: "Evaluation of perimeter, building, and campus-wide security controls.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Access Control & Visitor Management",
+        description: "Controlled entry systems and visitor screening procedures for campuses.",
+        icon: KeyRound,
+      },
+      {
+        title: "Emergency Response & Lockdown Planning",
+        description: "Emergency and lockdown procedures tailored to educational environments.",
+        icon: Siren,
+      },
+      {
+        title: "Student Safety Awareness Programmes",
+        description: "Age-appropriate safety and security awareness sessions for students and staff.",
+        icon: BookOpen,
+      },
+      {
+        title: "Security Personnel Training",
+        description: "Training for campus security staff on procedures, conduct, and incident response.",
+        icon: GraduationCap,
+      },
+      {
+        title: "CCTV & Surveillance Systems",
+        description: "Surveillance system design for entrances, corridors, and campus perimeters.",
+        icon: Cctv,
+      },
+    ],
+  },
+  {
+    slug: "embassies",
+    name: "Embassies & Diplomatic Missions",
+    icon: Globe,
+    tagline: "Diplomatic-Grade Security",
+    description:
+      "Drawing on direct experience securing a U.S. Embassy mission in Dhaka, Vertex provides diplomatic-grade security advisory and training for embassies and missions.",
+    services: [
+      {
+        title: "Perimeter Security Design",
+        description: "Advisory on perimeter security standards for diplomatic compounds and missions.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Access Control & Screening Procedures",
+        description: "Controlled entry, visitor screening, and credentialing procedures.",
+        icon: KeyRound,
+      },
+      {
+        title: "Close Protection & VIP Security",
+        description: "Close protection training and planning for diplomatic staff and visiting officials.",
+        icon: UserCheck,
+      },
+      {
+        title: "Emergency & Crisis Response Planning",
+        description: "Crisis and emergency response planning aligned to diplomatic security standards.",
+        icon: Siren,
+      },
+      {
+        title: "Diplomatic-Grade Security Training",
+        description: "Training programmes for mission security personnel built on international best practice.",
+        icon: GraduationCap,
+      },
+      {
+        title: "Surveillance & Threat Monitoring",
+        description: "Surveillance system design and threat-monitoring advisory for mission compounds.",
+        icon: Cctv,
+      },
+    ],
+  },
+  {
+    slug: "ngo",
+    name: "NGOs & International Organizations",
+    icon: Users,
+    tagline: "NGO & Field Security",
+    description:
+      "Vertex supports NGOs and international organizations with duty-of-care security programmes for staff, offices, and field operations across Bangladesh.",
+    services: [
+      {
+        title: "Field Security Risk Assessment",
+        description: "Risk assessments for field offices, project sites, and operational areas.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Duty of Care & Travel Security",
+        description: "Travel risk planning and duty-of-care frameworks for staff movement.",
+        icon: Compass,
+      },
+      {
+        title: "Staff Security Training",
+        description: "Security awareness and personal safety training for field and office staff.",
+        icon: GraduationCap,
+      },
+      {
+        title: "Emergency & Crisis Response Planning",
+        description: "Crisis response planning for security incidents affecting staff or operations.",
+        icon: Siren,
+      },
+      {
+        title: "Office & Compound Security",
+        description: "Security assessments and controls for offices, guesthouses, and compounds.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Incident Reporting Systems",
+        description: "Structured incident reporting and investigation processes for security events.",
+        icon: FileText,
+      },
+    ],
+  },
+  {
+    slug: "energy",
+    name: "Power & Energy",
+    icon: Zap,
+    tagline: "Critical Infrastructure Security",
+    description:
+      "Vertex provides security solutions for power generation, transmission, and energy facilities where operational continuity and site protection are critical.",
+    services: [
+      {
+        title: "Critical Infrastructure Protection",
+        description: "Security planning for power plants, substations, and energy infrastructure.",
+        icon: ShieldCheck,
+      },
+      {
+        title: "Perimeter & Access Control Systems",
+        description: "Access control and perimeter security for high-value utility sites.",
+        icon: KeyRound,
+      },
+      {
+        title: "Site Security Risk Assessment",
+        description: "Risk assessments covering sabotage, theft, and unauthorized access at utility sites.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Contractor & Visitor Management",
+        description: "Controlled entry procedures for contractors, vendors, and site visitors.",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Emergency Response Planning",
+        description: "Emergency preparedness planning for security and safety incidents on-site.",
+        icon: Siren,
+      },
+      {
+        title: "CCTV & Surveillance Systems",
+        description: "Surveillance system design for perimeters, control rooms, and critical assets.",
+        icon: Cctv,
+      },
+    ],
+  },
+  {
+    slug: "corporate",
+    name: "Corporate Offices",
+    icon: Briefcase,
+    tagline: "Corporate Office Security",
+    description:
+      "Vertex helps corporate offices of all sizes build practical, right-sized security programmes — from access control to executive protection and emergency planning.",
+    services: [
+      {
+        title: "Office Security Assessment",
+        description: "Evaluation of physical security controls across office facilities.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Access Control & Visitor Management",
+        description: "Controlled entry systems and visitor management procedures for office environments.",
+        icon: KeyRound,
+      },
+      {
+        title: "Executive Protection",
+        description: "Close protection and secure travel planning for leadership and executives.",
+        icon: UserCheck,
+      },
+      {
+        title: "Employee Security Awareness Training",
+        description: "Training that builds a security-conscious culture across office staff.",
+        icon: GraduationCap,
+      },
+      {
+        title: "Emergency Response Planning",
+        description: "Emergency preparedness and evacuation planning for office environments.",
+        icon: Siren,
+      },
+      {
+        title: "CCTV & Surveillance Systems",
+        description: "Surveillance system design for entrances, lobbies, and office floors.",
+        icon: Cctv,
+      },
+    ],
   },
 ];
 

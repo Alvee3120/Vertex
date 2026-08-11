@@ -123,7 +123,7 @@ export function ContactForm() {
           rows={5}
           value={values.message}
           onChange={(e) => update("message", e.target.value)}
-          placeholder="Tell us about your security requirements..."
+          placeholder="Tell us about your special security needs and problems being faced..."
         />
       </div>
 

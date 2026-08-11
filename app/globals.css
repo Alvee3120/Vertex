@@ -145,6 +145,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    letter-spacing: 0.03em;
   }
   html {
     @apply font-sans;

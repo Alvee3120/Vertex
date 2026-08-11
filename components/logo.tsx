@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import logoImage from "@/app/logo.png";
 
 const SHIELD_PATH =
   "M8,10 L38,2 L50,16 L62,2 L92,10 L92,52 C92,84 74,104 50,116 C26,104 8,84 8,52 Z";
@@ -35,29 +37,19 @@ export function LogoMark({ className }: { className?: string }) {
 
 export function Logo({
   className,
-  showTagline = false,
   href = "/",
 }: {
   className?: string;
-  showTagline?: boolean;
   href?: string;
 }) {
   return (
-    <Link href={href} className={cn("group flex items-center gap-3", className)}>
-      <LogoMark className="h-10 w-auto shrink-0" />
-      <div className="flex flex-col leading-none">
-        <span className="font-heading text-[1.6rem] font-extrabold tracking-tight text-navy uppercase">
-          Vertex
-        </span>
-        <span className="font-heading -mt-0.5 text-[0.62rem] font-bold tracking-[0.22em] text-red uppercase">
-          Security Solutions
-        </span>
-        {showTagline && (
-          <span className="mt-1.5 text-[0.7rem] text-steel italic">
-            Protecting People &bull; Assets &bull; Reputation
-          </span>
-        )}
-      </div>
+    <Link href={href} className={cn("flex items-center", className)}>
+      <Image
+        src={logoImage}
+        alt="Vertex Security Solutions"
+        priority
+        className="h-14 w-auto"
+      />
     </Link>
   );
 }

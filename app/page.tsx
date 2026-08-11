@@ -4,6 +4,7 @@ import { ServicesOverview } from "@/components/sections/services-overview";
 import { Secure360 } from "@/components/sections/secure360";
 import { IndustriesGrid } from "@/components/sections/industries-grid";
 import { WhyVertex } from "@/components/sections/why-vertex";
+import { Clients } from "@/components/sections/clients";
 import { CtaBanner } from "@/components/sections/cta-banner";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Secure360 />
       <IndustriesGrid />
       <WhyVertex />
+      <Clients />
       <CtaBanner />
     </>
   );

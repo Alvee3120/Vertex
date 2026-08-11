@@ -49,7 +49,7 @@ export function SectionKicker({
   return (
     <span
       className={cn(
-        "font-heading inline-block text-xs font-bold tracking-[0.3em] text-red uppercase",
+        "font-heading inline-block text-base font-bold tracking-[0.3em] text-red uppercase",
         className
       )}
     >

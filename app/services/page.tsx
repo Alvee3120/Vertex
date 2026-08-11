@@ -15,7 +15,7 @@ import { serviceCategories } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore Vertex Security Solutions' four service pillars: Security Training, Security Risk Consultancy, Electronic Security Consultancy, and Executive Protection Services.",
+    "Explore Vertex Security Solutions' service pillars: Professional Security Training, Security Risk Consultancy, Security Technology, Executive Protection, and Background Screening.",
 };
 
 export default function ServicesPage() {
@@ -24,7 +24,7 @@ export default function ServicesPage() {
       <PageHero
         kicker="What We Offer"
         title="Comprehensive Security Solutions"
-        description="Four integrated service pillars — training, consultancy, technology, and protection — designed to build lasting security capability."
+        description="Integrated service pillars — training, consultancy, technology, protection, and screening — designed to build lasting security capability."
       />
 
       <section className="bg-white py-24">

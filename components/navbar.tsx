@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
+import { SolutionsMenu } from "@/components/solutions-menu";
 import {
   Sheet,
   SheetContent,
@@ -13,12 +14,22 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
-import { navLinks } from "@/lib/data";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import { navLinks, ourSolutions } from "@/lib/data";
 import { cn } from "@/lib/utils";
+
+const hiddenFromHeader = ["/rmg-solutions", "/industries"];
+const headerLinks = navLinks.filter((link) => !hiddenFromHeader.includes(link.href));
 
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const solutionsActive = pathname.startsWith("/solutions") || pathname.startsWith("/rmg-solutions");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -40,20 +51,22 @@ export function Navbar() {
         <Logo />
 
         <nav className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => {
+          {headerLinks.map((link) => {
             const active =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "rounded-md px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors",
-                  active ? "text-navy" : "text-steel hover:text-navy"
-                )}
-              >
-                {link.label}
-              </Link>
+              <span key={link.href} className="flex items-center">
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "rounded-md px-4 py-2 text-sm font-semibold tracking-wide uppercase transition-colors",
+                    active ? "text-navy" : "text-steel hover:text-navy"
+                  )}
+                >
+                  {link.label}
+                </Link>
+                {link.href === "/services" && <SolutionsMenu active={solutionsActive} />}
+              </span>
             );
           })}
         </nav>
@@ -96,23 +109,44 @@ function MobileNav({ pathname }: { pathname: string }) {
           <SheetTitle className="sr-only">Navigation menu</SheetTitle>
           <SheetDescription className="sr-only">Main navigation</SheetDescription>
         </SheetHeader>
-        <nav className="flex flex-col gap-1 p-4">
-          {navLinks.map((link) => {
+        <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto p-4">
+          {headerLinks.map((link) => {
             const active =
               link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "rounded-md px-3 py-3 text-base font-semibold tracking-wide uppercase transition-colors",
-                  active
-                    ? "bg-accent text-navy"
-                    : "text-steel hover:bg-accent hover:text-navy"
+              <div key={link.href}>
+                <Link
+                  href={link.href}
+                  className={cn(
+                    "block rounded-md px-3 py-3 text-base font-semibold tracking-wide uppercase transition-colors",
+                    active
+                      ? "bg-accent text-navy"
+                      : "text-steel hover:bg-accent hover:text-navy"
+                  )}
+                >
+                  {link.label}
+                </Link>
+                {link.href === "/services" && (
+                  <Accordion>
+                    <AccordionItem value="our-solutions" className="border-none">
+                      <AccordionTrigger className="rounded-md px-3 py-3 font-sans text-base font-semibold tracking-wide text-steel uppercase hover:bg-accent hover:text-navy hover:no-underline">
+                        Our Solutions
+                      </AccordionTrigger>
+                      <AccordionContent className="flex flex-col gap-1 pb-1 pl-3 [&_a]:no-underline">
+                        {ourSolutions.map((item) => (
+                          <Link
+                            key={item.slug}
+                            href={item.href}
+                            className="rounded-md px-3 py-2 text-sm font-semibold tracking-wide text-steel uppercase transition-colors hover:bg-accent hover:text-navy"
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 )}
-              >
-                {link.label}
-              </Link>
+              </div>
             );
           })}
         </nav>

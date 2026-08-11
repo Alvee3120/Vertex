@@ -51,7 +51,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${barlowCondensed.variable}`}>
-      <body className="flex min-h-screen flex-col bg-offwhite font-sans text-foreground antialiased">
+      <body
+        className="flex min-h-screen flex-col bg-offwhite font-sans text-foreground antialiased"
+        suppressHydrationWarning
+      >
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

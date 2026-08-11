@@ -15,7 +15,7 @@ export function Timeline({ entries }: { entries: TimelineEntry[] }) {
                 </span>
               </div>
               <div className="flex-1 border border-border bg-white p-6 pt-5">
-                <p className="font-heading text-xs font-bold tracking-[0.2em] text-red uppercase">
+                <p className="font-heading text-base font-bold tracking-[0.2em] text-red uppercase">
                   {entry.organization}
                 </p>
                 <h3 className="mt-1.5 font-heading text-lg font-bold tracking-tight text-navy uppercase sm:text-xl">

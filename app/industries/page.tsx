@@ -14,7 +14,7 @@ export default function IndustriesPage() {
     <>
       <PageHero
         kicker="Who We Serve"
-        title="Industries We Protect"
+        title="Industries We Covered"
         description="Every sector faces a different risk profile. We tailor training, consultancy, and technology solutions to your industry's specific operational and compliance requirements."
       />
       <IndustriesGrid showAll showHeading={false} />

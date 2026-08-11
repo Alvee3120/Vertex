@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { LogoMark } from "@/components/logo";
 import { Separator } from "@/components/ui/separator";
 import { siteConfig, contactInfo, navLinks, serviceCategories } from "@/lib/data";
+import logoImage from "@/app/logo.png";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -12,16 +13,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3">
-              <LogoMark className="h-11 w-auto shrink-0" />
-              <div className="flex flex-col leading-none">
-                <span className="font-heading text-2xl font-extrabold tracking-tight text-white uppercase">
-                  Vertex
-                </span>
-                <span className="font-heading -mt-0.5 text-[0.62rem] font-bold tracking-[0.22em] text-red uppercase">
-                  Security Solutions
-                </span>
-              </div>
+            <Link href="/" className="inline-flex items-center rounded-lg bg-white px-3 py-2">
+              <Image src={logoImage} alt="Vertex Security Solutions" className="h-11 w-auto" />
             </Link>
             <p className="mt-4 text-sm text-white/60 italic">{siteConfig.slogan}</p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">

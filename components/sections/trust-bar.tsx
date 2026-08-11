@@ -2,22 +2,23 @@ import { trustBadges } from "@/lib/data";
 
 export function TrustBar() {
   return (
-    <section className="border-b border-border bg-white">
+    <section className="border-b border-navy-black bg-navy">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between">
+        <div className="flex flex-col items-center gap-6 lg:flex-row lg:justify-between lg:gap-6">
           <div className="text-center lg:text-left">
-            <p className="font-heading text-3xl font-extrabold text-navy">
-              42+ <span className="text-lg font-bold text-steel">Years Experience</span>
+            <p className="font-heading text-4xl font-extrabold text-white">42+</p>
+            <p className="mt-1 text-xs font-bold tracking-[0.15em] text-white/70 uppercase sm:text-sm">
+              Years of Risk Management Knowledge
             </p>
           </div>
-          <div className="hidden h-10 w-px bg-border lg:block" />
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-3 lg:justify-end">
-            {trustBadges.map((badge, i) => (
-              <span key={badge} className="flex items-center gap-x-3">
-                {i > 0 && <span className="text-red">&bull;</span>}
-                <span className="text-sm font-semibold tracking-wide text-steel uppercase">
-                  {badge}
-                </span>
+          <div className="h-px w-16 bg-white/15 lg:h-10 lg:w-px" />
+          <div className="flex flex-wrap items-center justify-center gap-2 lg:justify-end">
+            {trustBadges.map((badge) => (
+              <span
+                key={badge}
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold tracking-wide text-white/80 uppercase"
+              >
+                {badge}
               </span>
             ))}
           </div>

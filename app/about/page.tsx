@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Target, Compass, Quote } from "lucide-react";
+import khalilPhoto from "@/app/khalilsir.png";
 import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
 import { Timeline } from "@/components/timeline";
@@ -129,8 +131,13 @@ export default function AboutPage() {
           <FadeIn delay={0.1}>
             <div className="mx-auto mt-14 grid max-w-5xl grid-cols-1 gap-10 border border-border bg-offwhite p-8 sm:p-12 lg:grid-cols-3">
               <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-                <div className="flex size-28 items-center justify-center rounded-full bg-navy font-heading text-3xl font-extrabold text-white">
-                  KAK
+                <div className="size-32 overflow-hidden rounded-full border-4 border-navy shadow-md">
+                  <Image
+                    src={khalilPhoto}
+                    alt={contactInfo.name}
+                    className="h-full w-full object-cover"
+                    priority
+                  />
                 </div>
                 <h3 className="mt-5 font-heading text-xl font-bold tracking-tight text-navy uppercase">
                   {contactInfo.name}
