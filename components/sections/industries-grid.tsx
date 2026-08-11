@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/fade-in";
 import { SectionKicker } from "@/components/page-hero";
 import { cn } from "@/lib/utils";
-import { industries } from "@/lib/data";
+import { ourSolutions } from "@/lib/data";
 
 const iconStyles = [
   "bg-navy text-white",
@@ -23,7 +23,7 @@ export function IndustriesGrid({
   showAll?: boolean;
   showHeading?: boolean;
 }) {
-  const list = showAll ? industries : industries.slice(0, 8);
+  const list = showAll ? ourSolutions : ourSolutions.slice(0, 8);
 
   return (
     <section className="bg-white py-24">
@@ -48,11 +48,14 @@ export function IndustriesGrid({
             showHeading && "mt-14"
           )}
         >
-          {list.map((industry, i) => {
-            const Icon = industry.icon;
+          {list.map((solution, i) => {
+            const Icon = solution.icon;
             return (
-              <FadeIn key={industry.name} delay={i * 0.04}>
-                <div className="flex h-full flex-col items-center gap-4 border border-border bg-offwhite px-4 py-8 text-center transition-colors hover:border-navy/30 hover:bg-white">
+              <FadeIn key={solution.slug} delay={i * 0.04}>
+                <Link
+                  href={solution.href}
+                  className="flex h-full flex-col items-center gap-4 border border-border bg-offwhite px-4 py-8 text-center transition-colors hover:border-navy/30 hover:bg-white"
+                >
                   <div
                     className={cn(
                       "flex size-16 items-center justify-center rounded-full shadow-md",
@@ -62,9 +65,9 @@ export function IndustriesGrid({
                     <Icon className="size-8" />
                   </div>
                   <p className="text-sm leading-snug font-semibold text-navy">
-                    {industry.name}
+                    {solution.name}
                   </p>
-                </div>
+                </Link>
               </FadeIn>
             );
           })}

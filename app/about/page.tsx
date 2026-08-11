@@ -69,12 +69,12 @@ export default function AboutPage() {
                 </div>
               </FadeIn>
               <FadeIn delay={0.26}>
-                <div className="h-full border-l-2 border-red bg-navy p-7 text-white">
+                <div className="h-full border-l-2 border-red bg-blue-light p-7 text-navy">
                   <Quote className="size-7 text-red" />
                   <h3 className="mt-4 font-heading text-lg font-bold tracking-wide uppercase">
                     Brand Promise
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/75 italic">
+                  <p className="mt-2 text-sm leading-relaxed text-steel italic">
                     &ldquo;{siteConfig.brandPromise}&rdquo;
                   </p>
                 </div>

@@ -10,12 +10,9 @@ import {
   ClipboardList,
   Cctv,
   UserCheck,
-  Factory,
   Landmark,
   Building2,
   Pill,
-  Cog,
-  BedDouble,
   HeartPulse,
   School,
   Globe,
@@ -352,26 +349,6 @@ export const rmgServices: RmgService[] = [
   },
 ];
 
-export type Industry = { name: string; icon: LucideIcon };
-
-export const industries: Industry[] = [
-  { name: "Ready-Made Garments (RMG)", icon: Shirt },
-  { name: "Textile & Composite Mills", icon: Factory },
-  { name: "Banks & Financial Institutions", icon: Landmark },
-  { name: "Multinational Companies", icon: Building2 },
-  { name: "Pharmaceuticals", icon: Pill },
-  { name: "Manufacturing Industries", icon: Cog },
-  { name: "Hotels & Hospitality", icon: BedDouble },
-  { name: "Hospitals & Healthcare", icon: HeartPulse },
-  { name: "Educational Institutions", icon: School },
-  { name: "Embassies & Diplomatic Missions", icon: Globe },
-  { name: "NGOs & International Organizations", icon: Users },
-  { name: "Power & Energy", icon: Zap },
-  { name: "Telecommunications", icon: Radio },
-  { name: "Logistics & Warehousing", icon: Warehouse },
-  { name: "Corporate Offices", icon: Building2 },
-];
-
 export type TimelineEntry = {
   order: string;
   role: string;
@@ -492,6 +469,12 @@ export const homepageServiceCards: {
     description: "Close protection, VIP security, and travel security planning and training.",
     icon: UserCheck,
   },
+  {
+    slug: "background-screening",
+    title: "Background Screening",
+    description: "Due-diligence checks that verify candidates, vendors, and partners before you extend trust.",
+    icon: UserSearch,
+  },
 ];
 
 export type SolutionLink = {
@@ -565,6 +548,20 @@ export const ourSolutions: SolutionLink[] = [
     icon: Zap,
     href: "/solutions/energy",
     blurb: "Critical infrastructure and site protection.",
+  },
+  {
+    slug: "telecommunications",
+    name: "Telecommunications",
+    icon: Radio,
+    href: "/solutions/telecommunications",
+    blurb: "Site, tower, and network infrastructure security.",
+  },
+  {
+    slug: "logistics",
+    name: "Logistics & Warehousing",
+    icon: Warehouse,
+    href: "/solutions/logistics",
+    blurb: "Warehouse, cargo, and distribution centre security.",
   },
   {
     slug: "corporate",
@@ -862,6 +859,86 @@ export const industrySolutions: IndustrySolution[] = [
         title: "Incident Reporting Systems",
         description: "Structured incident reporting and investigation processes for security events.",
         icon: FileText,
+      },
+    ],
+  },
+  {
+    slug: "telecommunications",
+    name: "Telecommunications",
+    icon: Radio,
+    tagline: "Telecom Infrastructure Security",
+    description:
+      "Vertex protects telecom towers, exchanges, and network infrastructure with security programmes built for distributed, high-value, often unmanned sites.",
+    services: [
+      {
+        title: "Tower & Site Security Assessment",
+        description: "Evaluation of physical security controls at cell towers, BTS sites, and exchanges.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Perimeter & Access Control",
+        description: "Access control and perimeter security for exchanges, data centres, and network hubs.",
+        icon: KeyRound,
+      },
+      {
+        title: "Cable & Equipment Theft Prevention",
+        description: "Controls that reduce theft and vandalism of cabling, batteries, and network equipment.",
+        icon: ShieldAlert,
+      },
+      {
+        title: "Contractor & Vendor Management",
+        description: "Controlled access procedures for maintenance crews and third-party vendors.",
+        icon: ClipboardCheck,
+      },
+      {
+        title: "Remote CCTV & Monitoring Systems",
+        description: "Surveillance and remote monitoring design for unmanned and semi-manned sites.",
+        icon: Cctv,
+      },
+      {
+        title: "Emergency Response Planning",
+        description: "Incident response planning for security events that risk network continuity.",
+        icon: Siren,
+      },
+    ],
+  },
+  {
+    slug: "logistics",
+    name: "Logistics & Warehousing",
+    icon: Warehouse,
+    tagline: "Logistics & Warehouse Security",
+    description:
+      "Vertex secures warehouses, distribution centres, and cargo operations with programmes that protect inventory, prevent pilferage, and maintain supply chain integrity.",
+    services: [
+      {
+        title: "Warehouse Security Assessment",
+        description: "Structured evaluation of physical security controls across storage and distribution facilities.",
+        icon: ClipboardList,
+      },
+      {
+        title: "Cargo & Inventory Loss Prevention",
+        description: "Controls that reduce pilferage, shrinkage, and theft across the storage and dispatch cycle.",
+        icon: ShieldAlert,
+      },
+      {
+        title: "Gate & Vehicle Security Procedures",
+        description: "Inspection and documentation procedures for incoming and outgoing vehicles and cargo.",
+        icon: Boxes,
+      },
+      {
+        title: "Access Control & Visitor Management",
+        description: "Controlled entry systems and visitor procedures for warehouses and distribution centres.",
+        icon: KeyRound,
+      },
+      {
+        title: "CCTV & Surveillance Systems",
+        description: "Surveillance system design for loading bays, storage areas, and perimeters.",
+        icon: Cctv,
+      },
+      {
+        title: "Fire Safety Management",
+        description: "Fire prevention systems and readiness training aligned to BNBC requirements.",
+        icon: FireExtinguisher,
       },
     ],
   },

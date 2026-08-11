@@ -19,7 +19,7 @@ export default function RmgSolutionsPage() {
         title="RMG Security & Compliance Solutions"
         description="Purpose-built security and compliance support for Bangladesh's Ready-Made Garment industry, aligned to international buyer and audit requirements."
       >
-        <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-[0.15em] text-white/80 uppercase">
+        <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-navy/15 bg-white px-4 py-1.5 text-xs font-semibold tracking-[0.15em] text-navy/80 uppercase">
           <Shirt className="size-3.5 text-red" />
           Serving Factories, Exporters &amp; Supply Chain Partners
         </div>

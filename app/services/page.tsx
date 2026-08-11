@@ -78,11 +78,11 @@ export default function ServicesPage() {
           </Accordion>
 
           <FadeIn>
-            <div className="mt-14 flex flex-col items-center gap-4 border border-navy/15 bg-navy p-10 text-center">
-              <h3 className="font-heading text-2xl font-extrabold tracking-tight text-white uppercase">
+            <div className="mt-14 flex flex-col items-center gap-4 border border-navy/15 bg-blue-light p-10 text-center">
+              <h3 className="font-heading text-2xl font-extrabold tracking-tight text-navy uppercase">
                 Not Sure Which Service Fits Your Needs?
               </h3>
-              <p className="max-w-xl text-sm text-white/70">
+              <p className="max-w-xl text-sm text-steel">
                 Speak with our Principal Security Consultant for a tailored
                 recommendation based on your organization&rsquo;s risk profile.
               </p>

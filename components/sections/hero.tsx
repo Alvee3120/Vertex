@@ -8,10 +8,7 @@ import { siteConfig } from "@/lib/data";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#ffffff]">
-      <div className="pointer-events-none absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full bg-red/10 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -left-32 h-[420px] w-[420px] rounded-full bg-navy/5 blur-3xl" />
-
+    <section className="relative overflow-hidden bg-gray-light">
       <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-28 text-center sm:px-6 sm:py-36 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -20,7 +17,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-navy/15 bg-navy/5 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-navy/80 uppercase backdrop-blur"
         >
           <ShieldCheck className="size-3.5 text-red" />
-          42+ Years of Security Leadership
+          42+ Years of Risk Management Knowledge
         </motion.div>
 
         <motion.h1

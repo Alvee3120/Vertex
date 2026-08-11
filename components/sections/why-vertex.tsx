@@ -13,7 +13,7 @@ export function WhyVertex() {
           <FadeIn>
             <SectionKicker>Why Vertex</SectionKicker>
             <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-navy uppercase sm:text-4xl">
-              Led by Four Decades of Security Command
+              Led by Four Decades of Risk Management Knowledge
             </h2>
             <p className="mt-5 text-base leading-relaxed text-steel">
               Vertex Security Solutions is founded by{" "}

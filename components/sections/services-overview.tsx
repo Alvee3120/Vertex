@@ -11,20 +11,24 @@ export function ServicesOverview() {
         <FadeIn className="mx-auto max-w-2xl text-center">
           <SectionKicker>What We Do</SectionKicker>
           <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-navy uppercase sm:text-4xl">
-            Four Pillars of Security Capability
+            Five Pillars of Security Capability
           </h2>
           <p className="mt-4 text-base leading-relaxed text-steel">
             From frontline training to strategic risk consultancy, technology
-            advisory, and executive protection — every service is built to
-            strengthen your organization&rsquo;s resilience.
+            advisory, executive protection, and background screening — every
+            service is built to strengthen your organization&rsquo;s resilience.
           </p>
         </FadeIn>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {homepageServiceCards.map((card, i) => {
             const Icon = card.icon;
             return (
-              <FadeIn key={card.slug} delay={i * 0.08}>
+              <FadeIn
+                key={card.slug}
+                delay={i * 0.08}
+                className={i < 3 ? "lg:col-span-2" : "lg:col-span-3"}
+              >
                 <Link
                   href={`/services#${card.slug}`}
                   className="group relative flex h-full flex-col border border-border bg-white p-7 transition-all hover:-translate-y-1 hover:border-navy/20 hover:shadow-xl"
