@@ -3,17 +3,36 @@ import { Shirt } from "lucide-react";
 import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbJsonLd, rmgServiceJsonLd } from "@/lib/json-ld";
 import { rmgServices } from "@/lib/data";
+
+const description =
+  "Specialized security and compliance solutions for Bangladesh's Ready-Made Garment industry — C-TPAT awareness, supply chain security, factory assessments, fire safety, and more.";
 
 export const metadata: Metadata = {
   title: "RMG Security Solutions",
-  description:
-    "Specialized security and compliance solutions for Bangladesh's Ready-Made Garment industry — C-TPAT awareness, supply chain security, factory assessments, fire safety, and more.",
+  description,
+  alternates: { canonical: "/rmg-solutions" },
+  openGraph: {
+    title: "RMG Security & Compliance Solutions",
+    description,
+    url: "/rmg-solutions",
+  },
 };
 
 export default function RmgSolutionsPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          rmgServiceJsonLd(),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "RMG Solutions", path: "/rmg-solutions" },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="Specialized Vertical"
         title="RMG Security & Compliance Solutions"

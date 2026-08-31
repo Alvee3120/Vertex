@@ -116,6 +116,9 @@ export function Footer() {
             &copy; {year} Vertex Security Solutions. All rights reserved.
           </p>
           <p className="text-center sm:text-right">
+            Designed & Developed by <a className="text-red" href='https://alveeportfolio.vercel.app'> Alvee</a> 
+          </p>
+          <p className="text-center sm:text-right">
             All inquiries are handled with strict confidentiality.
           </p>
         </div>

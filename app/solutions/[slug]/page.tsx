@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbJsonLd, industryServiceJsonLd } from "@/lib/json-ld";
 import { industrySolutions } from "@/lib/data";
 
 export function generateStaticParams() {
@@ -21,6 +23,12 @@ export async function generateMetadata({
   return {
     title: solution.name,
     description: solution.description,
+    alternates: { canonical: `/solutions/${solution.slug}` },
+    openGraph: {
+      title: `${solution.name} Security Solutions`,
+      description: solution.description,
+      url: `/solutions/${solution.slug}`,
+    },
   };
 }
 
@@ -35,6 +43,16 @@ export default async function SolutionPage({
 
   return (
     <>
+      <JsonLd
+        data={[
+          industryServiceJsonLd(solution),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Industries", path: "/industries" },
+            { name: solution.name, path: `/solutions/${solution.slug}` },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="Our Solutions"
         title={solution.tagline}

@@ -3,17 +3,36 @@ import { Mail, Phone, MapPin, ShieldCheck, Clock } from "lucide-react";
 import { PageHero } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
 import { ContactForm } from "@/components/contact-form";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbJsonLd, contactPageJsonLd } from "@/lib/json-ld";
 import { contactInfo } from "@/lib/data";
+
+const description =
+  "Get in touch with Vertex Security Solutions for a confidential consultation on security training, risk consultancy, or security technology.";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Get in touch with Vertex Security Solutions for a confidential consultation on security training, risk consultancy, or security technology.",
+  description,
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Vertex Security Solutions",
+    description,
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          contactPageJsonLd(),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="Get In Touch"
         title="Request a Confidential Consultation"

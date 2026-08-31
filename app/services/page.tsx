@@ -10,17 +10,36 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbJsonLd, serviceCategoryJsonLd } from "@/lib/json-ld";
 import { serviceCategories } from "@/lib/data";
+
+const description =
+  "Explore Vertex Security Solutions' service pillars: Professional Security Training, Security Risk Consultancy, Security Technology, Executive Protection, and Background Screening.";
 
 export const metadata: Metadata = {
   title: "Services",
-  description:
-    "Explore Vertex Security Solutions' service pillars: Professional Security Training, Security Risk Consultancy, Security Technology, Executive Protection, and Background Screening.",
+  description,
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Vertex Security Solutions — Services",
+    description,
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          ...serviceCategories.map(serviceCategoryJsonLd),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="What We Offer"
         title="Comprehensive Security Solutions"

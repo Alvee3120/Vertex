@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Barlow_Condensed } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { JsonLd } from "@/components/json-ld";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,6 +36,20 @@ export const metadata: Metadata = {
     "Vertex Security Solutions",
   ],
   metadataBase: new URL("https://vertexsecuritysolutions.com"),
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Vertex Security Solutions",
     description:
@@ -42,6 +58,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+  category: "Security Services",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#023880",
+  colorScheme: "light",
 };
 
 export default function RootLayout({
@@ -55,6 +80,7 @@ export default function RootLayout({
         className="flex min-h-screen flex-col bg-offwhite font-sans text-foreground antialiased"
         suppressHydrationWarning
       >
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

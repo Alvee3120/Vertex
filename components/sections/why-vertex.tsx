@@ -18,8 +18,7 @@ export function WhyVertex() {
             <p className="mt-5 text-base leading-relaxed text-steel">
               Vertex Security Solutions is founded by{" "}
               <strong className="text-navy">{contactInfo.name}</strong>,{" "}
-              {contactInfo.credentials}, who brings over 42 years of leadership
-              experience across the Bangladesh Army, United Nations Peacekeeping
+              {contactInfo.credentials}, who brings over 42 years of Security Knowledge and experience across the Bangladesh Army, United Nations Peacekeeping
               Missions, the U.S. Embassy in Dhaka as Mission Security Manager, and
               senior leadership roles at G4S Bangladesh.
             </p>

@@ -44,14 +44,14 @@ export const siteConfig = {
   shortName: "VERTEX",
   tagline: "Security Training • Risk Consultancy • Security Technology",
   slogan: "Protecting People • Assets • Reputation",
-  brandPromise: "We don't provide security—we enhance security capabilities.",
+  brandPromise: "We don't provide security only—we enhance security capabilities.",
   description:
     "Vertex Security Solutions is a Bangladesh-based Security Training, Risk Consultancy, and Security Technology firm dedicated to helping organizations protect their people, assets, operations, information, and reputation.",
   url: "https://vertexsecuritysolutions.com",
 };
 
 export const contactInfo = {
-  name: "Major Khalil Ahmed Khan",
+  name: "Major Khalil Ahmed Khan (Retd.)",
   credentials: "psc, MDS, MBA, SRMP-C (Retd)",
   title: "Founder & Principal Security Consultant",
   email: "khalilak@gmail.com",

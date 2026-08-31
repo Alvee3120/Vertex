@@ -6,6 +6,8 @@ import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
 import { Timeline } from "@/components/timeline";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { JsonLd } from "@/components/json-ld";
+import { breadcrumbJsonLd, personJsonLd } from "@/lib/json-ld";
 import {
   companyStory,
   vision,
@@ -16,15 +18,32 @@ import {
   siteConfig,
 } from "@/lib/data";
 
+const description =
+  "Learn about Vertex Security Solutions, our vision, mission, core values, and the leadership of Major Khalil Ahmed Khan (Retd), Founder & Principal Security Consultant.";
+
 export const metadata: Metadata = {
   title: "About Us",
-  description:
-    "Learn about Vertex Security Solutions, our vision, mission, core values, and the leadership of Major Khalil Ahmed Khan (Retd), Founder & Principal Security Consultant.",
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Vertex Security Solutions",
+    description,
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          personJsonLd(),
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+        ]}
+      />
       <PageHero
         kicker="About Vertex"
         title="Building Bangladesh's Most Trusted Security Capability"
@@ -149,7 +168,7 @@ export default function AboutPage() {
               </div>
               <div className="lg:col-span-2">
                 <p className="text-base leading-relaxed text-steel">
-                  Major Khalil Ahmed Khan brings over 42 years of leadership
+                  Major Khalil Ahmed Khan (Retd.) brings over 42 years of leadership
                   experience in security management, administration, operations,
                   training, investigations, executive protection, and risk
                   management.

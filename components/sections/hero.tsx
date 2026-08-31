@@ -26,7 +26,7 @@ export function Hero() {
           transition={{ duration: 0.65, delay: 0.1 }}
           className="mt-8 max-w-4xl font-heading text-4xl leading-[1.05] font-extrabold tracking-tight text-foreground uppercase sm:text-6xl"
         >
-          We Don&rsquo;t Provide Security.
+          We Don&rsquo;t Provide Security Only.
           <br />
           <span className="text-red">We Enhance Protection Capability.</span>
         </motion.h1>
