@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Shirt } from "lucide-react";
 import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
@@ -46,20 +47,34 @@ export default function RmgSolutionsPage() {
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mx-auto max-w-3xl text-center">
-            <SectionKicker>Why It Matters</SectionKicker>
-            <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-navy uppercase sm:text-4xl">
-              Security Compliance Built for the RMG Sector
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-steel">
-              Ready-Made Garment manufacturers face unique security and
-              compliance demands — from buyer audits and C-TPAT expectations
-              to fire safety, supply chain integrity, and workforce safety.
-              Vertex provides specialized training, assessments, and advisory
-              support to help RMG facilities meet these requirements with
-              confidence.
-            </p>
-          </FadeIn>
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
+            <FadeIn className="mx-auto max-w-3xl lg:mx-0 lg:text-left">
+              <SectionKicker>Why It Matters</SectionKicker>
+              <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-navy uppercase sm:text-4xl">
+                Security Compliance Built for the RMG Sector
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-steel">
+                Ready-Made Garment manufacturers face unique security and
+                compliance demands — from buyer audits and C-TPAT expectations
+                to fire safety, supply chain integrity, and workforce safety.
+                Vertex provides specialized training, assessments, and advisory
+                support to help RMG facilities meet these requirements with
+                confidence.
+              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <div className="relative aspect-[4/3] w-full overflow-hidden border border-border bg-offwhite shadow-sm">
+                <Image
+                  src="/images/rmg-factory-floor.jpg"
+                  alt="Bangladeshi ready-made garment factory production line"
+                  fill
+                  sizes="(min-width: 1024px) 640px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+          </div>
 
           <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {rmgServices.map((service, i) => {
@@ -83,6 +98,22 @@ export default function RmgSolutionsPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-offwhite py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="relative aspect-[16/6] w-full overflow-hidden border border-border bg-white shadow-sm">
+              <Image
+                src="/images/rmg-cargo-inspection.jpg"
+                alt="Container security inspection at port"
+                fill
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 

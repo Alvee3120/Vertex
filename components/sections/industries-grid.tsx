@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/fade-in";
 import { SectionKicker } from "@/components/page-hero";
@@ -42,10 +43,24 @@ export function IndustriesGrid({
           </FadeIn>
         )}
 
+        {showHeading && (
+          <FadeIn className="mt-10">
+            <div className="relative aspect-[16/6] w-full overflow-hidden border border-border bg-offwhite">
+              <Image
+                src="/images/industries-overview.jpg"
+                alt="Industries served by Vertex Security Solutions"
+                fill
+                sizes="(min-width: 1280px) 1280px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+        )}
+
         <div
           className={cn(
             "grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4",
-            showHeading && "mt-14"
+            showHeading && "mt-10"
           )}
         >
           {list.map((solution, i) => {

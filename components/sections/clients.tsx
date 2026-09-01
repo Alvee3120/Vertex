@@ -1,8 +1,6 @@
-import { Building2 } from "lucide-react";
+import Image from "next/image";
 import { FadeIn } from "@/components/fade-in";
 import { SectionKicker } from "@/components/page-hero";
-
-const placeholderClients = Array.from({ length: 8 });
 
 export function Clients() {
   return (
@@ -19,15 +17,17 @@ export function Clients() {
           </p>
         </FadeIn>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {placeholderClients.map((_, i) => (
-            <FadeIn key={i} delay={i * 0.04}>
-              <div className="flex h-24 items-center justify-center rounded-md border border-dashed border-border bg-white">
-                <Building2 className="size-8 text-steel/30" />
-              </div>
-            </FadeIn>
-          ))}
-        </div>
+        <FadeIn className="mt-10">
+          <div className="relative aspect-[16/6] w-full overflow-hidden border border-border bg-white">
+            <Image
+              src="/images/clients-meeting.jpg"
+              alt="Vertex clients and partners across Bangladesh"
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover"
+            />
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

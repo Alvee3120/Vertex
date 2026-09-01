@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { FadeIn } from "@/components/fade-in";
 import { SectionKicker } from "@/components/page-hero";
@@ -18,6 +19,18 @@ export function ServicesOverview() {
             advisory, executive protection, and background screening — every
             service is built to strengthen your organization&rsquo;s resilience.
           </p>
+        </FadeIn>
+
+        <FadeIn className="mt-10">
+          <div className="relative aspect-[16/5] w-full overflow-hidden border border-border bg-white">
+            <Image
+              src="/images/services-overview-header.jpg"
+              alt="Security operations and training overview"
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </FadeIn>
 
         <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">

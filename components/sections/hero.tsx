@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,8 @@ import { siteConfig } from "@/lib/data";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-gray-light">
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-28 text-center sm:px-6 sm:py-36 lg:px-8">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-28 text-center sm:px-6 sm:py-36 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:py-32 lg:text-left lg:px-8">
+        <div className="flex w-full flex-col items-center lg:items-start">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,6 +78,18 @@ export function Hero() {
             Explore Our Services
           </Button>
         </motion.div>
+        </div>
+
+        <div className="relative mt-12 hidden aspect-video w-full overflow-hidden border border-border bg-offwhite shadow-sm lg:mt-0 lg:block">
+          <Image
+            src="/images/hero-security-team.jpg"
+            alt="Vertex security team at a corporate facility entrance"
+            fill
+            priority
+            sizes="(min-width: 1024px) 640px, 100vw"
+            className="object-cover"
+          />
+        </div>
       </div>
     </section>
   );

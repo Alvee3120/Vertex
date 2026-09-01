@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
@@ -45,6 +46,22 @@ export default function ServicesPage() {
         title="Comprehensive Security Solutions"
         description="Integrated service pillars — training, consultancy, technology, protection, and screening — designed to build lasting security capability."
       />
+
+      <section className="bg-white pt-2 pb-8">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="relative aspect-[16/5] w-full overflow-hidden border border-border bg-offwhite">
+              <Image
+                src="/images/services-overview-banner.jpg"
+                alt="Integrated security operations centre"
+                fill
+                sizes="(min-width: 1024px) 1024px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
