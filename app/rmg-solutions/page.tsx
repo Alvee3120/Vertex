@@ -64,12 +64,11 @@ export default function RmgSolutionsPage() {
             </FadeIn>
 
             <FadeIn delay={0.1}>
-              <div className="relative aspect-[4/3] w-full overflow-hidden border border-border bg-offwhite shadow-sm">
-                <Image
-                  src="/images/rmg-factory-floor.jpg"
+              <div className="relative  w-full rounded-2xl overflow-hidden border border-border bg-offwhite shadow-sm">
+                <img
+                  src="/images/rmg.jpg"
                   alt="Bangladeshi ready-made garment factory production line"
-                  fill
-                  sizes="(min-width: 1024px) 640px, 100vw"
+                  
                   className="object-cover"
                 />
               </div>
@@ -101,21 +100,7 @@ export default function RmgSolutionsPage() {
         </div>
       </section>
 
-      <section className="bg-offwhite py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="relative aspect-[16/6] w-full overflow-hidden border border-border bg-white shadow-sm">
-              <Image
-                src="/images/rmg-cargo-inspection.jpg"
-                alt="Container security inspection at port"
-                fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      
 
       <CtaBanner />
     </>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image, { type StaticImageData } from "next/image";
 import { notFound } from "next/navigation";
 import { PageHero, SectionKicker } from "@/components/page-hero";
 import { FadeIn } from "@/components/fade-in";
@@ -7,17 +6,6 @@ import { CtaBanner } from "@/components/sections/cta-banner";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbJsonLd, industryServiceJsonLd } from "@/lib/json-ld";
 import { industrySolutions } from "@/lib/data";
-import bankingHero from "@/public/images/solutions/banking-hero.jpg";
-import healthcareHero from "@/public/images/solutions/healthcare-hero.jpg";
-import embassiesHero from "@/public/images/solutions/embassies-hero.jpg";
-import energyHero from "@/public/images/solutions/energy-hero.jpg";
-
-const solutionImages: Record<string, { src: StaticImageData; alt: string }> = {
-  banking: { src: bankingHero, alt: "Banking facility security operations" },
-  healthcare: { src: healthcareHero, alt: "Healthcare facility security operations" },
-  embassies: { src: embassiesHero, alt: "Embassy and diplomatic security operations" },
-  energy: { src: energyHero, alt: "Power and energy infrastructure security" },
-};
 
 export function generateStaticParams() {
   return industrySolutions.map((solution) => ({ slug: solution.slug }));
@@ -70,24 +58,6 @@ export default async function SolutionPage({
         title={solution.tagline}
         description={solution.description}
       />
-
-      {solutionImages[solution.slug] && (
-        <section className="bg-white pt-2 pb-8">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <FadeIn>
-              <div className="relative aspect-video w-full overflow-hidden border border-border bg-offwhite shadow-sm">
-                <Image
-                  src={solutionImages[solution.slug].src}
-                  alt={solutionImages[solution.slug].alt}
-                  fill
-                  sizes="(min-width: 1280px) 1280px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </FadeIn>
-          </div>
-        </section>
-      )}
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -54,7 +54,7 @@ export const contactInfo = {
   name: "Major Khalil Ahmed Khan (Retd.)",
   credentials: "psc, MDS, MBA, SRMP-C (Retd)",
   title: "Founder & Principal Security Consultant",
-  email: "khalilak@gmail.com",
+  email: "info@vertexsecuritysolutions.com",
   phone: "+880 1977-277476",
   phoneHref: "+8801977277476",
   location: "Dhaka, Bangladesh",

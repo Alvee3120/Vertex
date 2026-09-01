@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, type FormEvent, useRef } from "react";
+import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
-import { Send, ImageIcon } from "lucide-react";
+import { Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,8 +16,6 @@ import {
 } from "@/components/ui/select";
 import { serviceInterestOptions } from "@/lib/data";
 
-const MODEL_SUPPORTS_IMAGES = false;
-
 const initialState = {
   name: "",
   company: "",
@@ -25,31 +23,14 @@ const initialState = {
   phone: "",
   service: "",
   message: "",
-  attachment: null as File | null,
 };
 
 export function ContactForm() {
   const [values, setValues] = useState(initialState);
   const [submitting, setSubmitting] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  function update<K extends keyof typeof initialState>(key: K, value: string | File | null) {
+  function update<K extends keyof typeof initialState>(key: K, value: string) {
     setValues((prev) => ({ ...prev, [key]: value }));
-  }
-
-  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0] ?? null;
-    update("attachment", file);
-
-    if (file && !MODEL_SUPPORTS_IMAGES) {
-      toast.error(`ERROR: Cannot read "${file.name}" (this model does not support image input). Inform the user.`);
-      e.target.value = "";
-      update("attachment", null);
-    }
-  }
-
-  function triggerFileSelect() {
-    fileInputRef.current?.click();
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -63,9 +44,6 @@ export function ContactForm() {
           "Thank you for contacting Vertex Security Solutions. Our team will respond within one business day.",
       });
       setValues(initialState);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
     }, 600);
   }
 
@@ -147,27 +125,6 @@ export function ContactForm() {
           onChange={(e) => update("message", e.target.value)}
           placeholder="Tell us about your special security needs and problems being faced..."
         />
-      </div>
-
-      <div className="space-y-1.5">
-        <Label htmlFor="attachment">Attachment</Label>
-        <input
-          ref={fileInputRef}
-          id="attachment"
-          type="file"
-          accept="image/*"
-          className="hidden"
-          onChange={handleFileChange}
-        />
-        <Button
-          type="button"
-          variant="outline"
-          className="w-full gap-2"
-          onClick={triggerFileSelect}
-        >
-          <ImageIcon className="size-4" />
-          {values.attachment ? values.attachment.name : "Choose an image to attach"}
-        </Button>
       </div>
 
       <Button

@@ -22,13 +22,12 @@ export function ServicesOverview() {
         </FadeIn>
 
         <FadeIn className="mt-10">
-          <div className="relative aspect-[16/5] w-full overflow-hidden border border-border bg-white">
-            <Image
-              src="/images/services-overview-header.jpg"
+          <div className="relative rounded-2xl w-full overflow-hidden border border-border bg-white">
+            <img
+              src="/images/services.png"
               alt="Security operations and training overview"
-              fill
-              sizes="(min-width: 1280px) 1280px, 100vw"
-              className="object-cover"
+              
+              className="object-cover w-full h-full"
             />
           </div>
         </FadeIn>

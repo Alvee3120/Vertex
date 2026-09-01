@@ -40,21 +40,7 @@ export default function ContactPage() {
         description="Tell us about your organization's security needs. Our Principal Security Consultant will personally review every inquiry."
       />
 
-      <section className="bg-white pt-2 pb-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="relative aspect-[16/5] w-full overflow-hidden border border-border bg-offwhite">
-              <Image
-                src="/images/contact-dhaka.jpg"
-                alt="Dhaka, Bangladesh — Vertex Security Solutions location"
-                fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      
 
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

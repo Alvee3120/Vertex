@@ -107,12 +107,11 @@ export default function AboutPage() {
       <section className="bg-white pt-2 pb-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="relative aspect-video w-full overflow-hidden border border-border bg-offwhite shadow-sm">
-              <Image
-                src="/images/about-office.jpg"
+            <div className="relative aspect-video w-full h-auto rounded-2xl overflow-hidden border border-border bg-offwhite shadow-sm">
+              <img
+                src="/images/office.png"
                 alt="Vertex Security Solutions briefing room"
-                fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
+                
                 className="object-cover"
               />
             </div>
@@ -208,21 +207,7 @@ export default function AboutPage() {
       </section>
 
       {/* Training in action photo */}
-      <section className="bg-offwhite py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="relative aspect-[4/3] w-full overflow-hidden border border-border bg-white shadow-sm">
-              <Image
-                src="/images/about-training-session.jpg"
-                alt="Security training in session"
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      
 
       <CtaBanner />
     </>

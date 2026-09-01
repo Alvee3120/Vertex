@@ -47,16 +47,14 @@ export default function ServicesPage() {
         description="Integrated service pillars — training, consultancy, technology, protection, and screening — designed to build lasting security capability."
       />
 
-      <section className="bg-white pt-2 pb-8">
+      <section className="bg-white pt-20 pb-8">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="relative aspect-[16/5] w-full overflow-hidden border border-border bg-offwhite">
-              <Image
-                src="/images/services-overview-banner.jpg"
+            <div className="relative w-full overflow-hidden border border-border bg-offwhite">
+              <img
+                src="/images/services.png"
                 alt="Integrated security operations centre"
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
+                className="object-cover w-full h-auto"
               />
             </div>
           </FadeIn>
@@ -88,7 +86,7 @@ export default function ServicesPage() {
                           <h2 className="font-heading text-xl font-bold tracking-tight text-navy uppercase sm:text-2xl">
                             {category.title}
                           </h2>
-                          <p className="mt-1 text-sm text-steel">
+                          <p className="mt-1 text-lg text-steel">
                             {`${category.items.length} specialized programmes & services`}
                           </p>
                         </div>
@@ -102,7 +100,7 @@ export default function ServicesPage() {
                         {category.items.map((item) => (
                           <li key={item} className="flex items-start gap-2.5">
                             <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-red" />
-                            <span className="text-sm text-navy/90">{item}</span>
+                            <span className="text-base text-navy/90">{item}</span>
                           </li>
                         ))}
                       </ul>

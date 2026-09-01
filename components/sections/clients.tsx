@@ -18,9 +18,9 @@ export function Clients() {
         </FadeIn>
 
         <FadeIn className="mt-10">
-          <div className="relative aspect-[16/6] w-full overflow-hidden border border-border bg-white">
+          <div className="relative aspect-[16/6] w-full overflow-hidden border border-border rounded-2xl bg-white">
             <Image
-              src="/images/clients-meeting.jpg"
+              src="/images/clients.jpeg"
               alt="Vertex clients and partners across Bangladesh"
               fill
               sizes="(min-width: 1280px) 1280px, 100vw"

@@ -45,14 +45,30 @@ export function IndustriesGrid({
 
         {showHeading && (
           <FadeIn className="mt-10">
-            <div className="relative aspect-[16/6] w-full overflow-hidden border border-border bg-offwhite">
-              <Image
-                src="/images/industries-overview.jpg"
-                alt="Industries served by Vertex Security Solutions"
-                fill
-                sizes="(min-width: 1280px) 1280px, 100vw"
-                className="object-cover"
-              />
+            <div className="flex flex-wrap justify-between gap-3">
+              {[
+                { src: "/images/emb.jpg", alt: "Embassy security detail" },
+                { src: "/images/pharmace.jpg", alt: "Pharmaceutical facility" },
+                { src: "/images/rmg.jpg", alt: "RMG factory operations" },
+                { src: "/images/multinational.jpg", alt: "Multinational office" },
+                { src: "/images/university.jpg", alt: "University campus" },
+                { src: "/images/hospital.jpg", alt: "Hospital security" },
+                { src: "/images/bank.jpg", alt: "Bank security" },
+              ].map((img) => (
+                <div
+                  key={img.src}
+                  className="relative flex-1 overflow-hidden border border-border bg-offwhite"
+                  style={{ flexBasis: "calc((100% - 3 * 0.75rem) / 4)", minWidth: 140, height: 110 }}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(min-width: 1024px) 14vw, (min-width: 640px) 30vw, 45vw"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
             </div>
           </FadeIn>
         )}

@@ -22,19 +22,20 @@ export function Secure360() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="relative hidden aspect-[4/3] w-full overflow-hidden border border-border bg-white shadow-sm lg:block">
+            <div className="relative  rounded-2xl  w-full overflow-hidden border border-border bg-white shadow-sm lg:block">
               <Image
-                src="/images/secure360-methodology.jpg"
+                src="/images/m.png"
                 alt="Security consultant conducting an on-site assessment"
-                fill
-                sizes="(min-width: 1024px) 560px, 100vw"
-                className="object-cover"
+                width={600}
+                height={600}
+                
+                className="object-cover  w-full"
               />
             </div>
           </FadeIn>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mt-16 grid grid-cols-2 gap-3 sm:grid-cols-2 lg:grid-cols-6">
           {secure360Steps.map((s, i) => (
             <FadeIn key={s.step} delay={i * 0.07}>
               <div className="flex h-full flex-col border border-navy/10 border-t-2 border-t-red bg-white p-6">
