@@ -24,9 +24,8 @@ export function ServicesOverview() {
         <FadeIn className="mt-10">
           <div className="relative rounded-2xl w-full overflow-hidden border border-border bg-white">
             <img
-              src="/images/services.png"
+              src="/images/service-all.jpeg"
               alt="Security operations and training overview"
-              
               className="object-cover w-full h-full"
             />
           </div>
