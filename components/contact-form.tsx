@@ -23,6 +23,7 @@ const initialState = {
   phone: "",
   service: "",
   message: "",
+  website: "", // honeypot — hidden from visitors, only bots fill it in
 };
 
 export function ContactForm() {
@@ -33,18 +34,34 @@ export function ContactForm() {
     setValues((prev) => ({ ...prev, [key]: value }));
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitting(true);
 
-    window.setTimeout(() => {
-      setSubmitting(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(values),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error ?? "Failed to send message");
+      }
+
       toast.success("Inquiry sent successfully", {
         description:
           "Thank you for contacting Vertex Security Solutions. Our team will respond within one business day.",
       });
       setValues(initialState);
-    }, 600);
+    } catch (error) {
+      toast.error(
+        error instanceof Error ? error.message : "Failed to send message",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -124,6 +141,18 @@ export function ContactForm() {
           value={values.message}
           onChange={(e) => update("message", e.target.value)}
           placeholder="Tell us about your special security needs and problems being faced..."
+        />
+      </div>
+
+      <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="website">Website</label>
+        <input
+          id="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website}
+          onChange={(e) => update("website", e.target.value)}
         />
       </div>
 
